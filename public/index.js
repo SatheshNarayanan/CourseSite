@@ -152,11 +152,12 @@ let cardData = [
 ];
 
 function handleRegisterSubmit() {
+  console.log("handleRegistration called")
   errorTextR.innerHTML = "";
   errorTextL.innerHTML = "";
   loader.style.display = "block";
-  loginRadio.disabled = true;
-  registerRadio.disabled = true;
+  // loginRadio.disabled = true;
+  // registerRadio.disabled = true;
   registerbtn.style.display = "none";
   let nielitid = document.getElementById("nielitid").value;
   let emailid = document.getElementById("registeremail").value;
@@ -165,8 +166,8 @@ function handleRegisterSubmit() {
   if (emailid == "" || nielitid == "" || password == "") {
     errorTextR.innerHTML = "All fields are mandatory!";
     loader.style.display = "none";
-    loginRadio.disabled = false;
-    registerRadio.disabled = false;
+    // loginRadio.disabled = false;
+    // registerRadio.disabled = false;
     registerbtn.style.display = "block";
   } else {
     const data = {
@@ -199,8 +200,8 @@ function handleRegisterSubmit() {
         inputPlaceholder.style.display = "none";
         successMsgholder.style.display = "flex";
         loader.style.display = "none";
-        loginRadio.disabled = false;
-        registerRadio.disabled = false;
+        // loginRadio.disabled = false;
+        // registerRadio.disabled = false;
         registerbtn.style.display = "block";
         // Handle the response data here
       })
@@ -208,8 +209,8 @@ function handleRegisterSubmit() {
         errorTextR.innerHTML = error;
         console.error("Error:", error);
         loader.style.display = "none";
-        loginRadio.disabled = false;
-        registerRadio.disabled = false;
+        // loginRadio.disabled = false;
+        // registerRadio.disabled = false;
         registerbtn.style.display = "block";
         // Handle errors here
       });
