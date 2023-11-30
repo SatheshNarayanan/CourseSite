@@ -5,6 +5,11 @@ let cardList = document.getElementById("cardGrid");
 
 let selectSector = document.getElementById("selectSector");
 
+let selectCourse = document.getElementById("selectCourse");
+
+let selectJob = document.getElementById("selectJob");
+
+
 var modal = document.getElementById("myModal");
 
 var modal1 = document.getElementById("myModal1");
@@ -284,6 +289,8 @@ function LoadSector() {
     optionElement.setAttribute("style", "line-height:100px");
     optionElement.innerHTML = element;
     selectSector.appendChild(optionElement);
+    selectJob.appendChild(optionElement.cloneNode(true));
+    selectCourse.appendChild(optionElement.cloneNode(true));
   });
 }
 

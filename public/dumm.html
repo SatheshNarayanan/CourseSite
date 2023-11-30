@@ -9,15 +9,88 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="login" style="display: none;">
-        <div class="modalBG2" >
-        <input type="email" placeholder="Email ID*" id="loginemail"/>
-        <input type="password" placeholder="Password*" id="loginpassword"/>
-        <p class="info" id="info">Forgot Password?</p>
-        <button class="primaryButtonLong" onclick="handleLoginSubmit()" id="loginbtn">Login</button>
-        <div class="loader" id="loaderL" style="margin-left: 35%;display:none"></div>
-                  <p class="errorText" id="errorTextL"></p>
-        </div>
-        </div>
+    <header>
+        <nav>
+            <img src="./images/logo.svg" style="max-width: 150px;">
+            <!-- <div></div> -->
+        <ul>
+            <li><a href="#home">NIELIT Home</a></li>
+            <li><a href="#news">Win Home</a></li>
+            <li><a href="./index.html">WIN Assessments Catalogue</a></li>
+            <li><a href="./dumm.html">WIN LOGIN</a></li>
+          </ul>
+          <img src="./images/Career.png" width="100%" style="max-width: 150px;">
+        </nav>
+        </header>
+
+
+        <div id="myModal" class="" style="padding: 8% 0% 4% 0%; ">
+            <!-- Modal content -->
+            <div class="modal-content" style="border: none;">
+              <!-- <span class="close" id="close">&times;</span> -->
+              <div class="modalBG" >
+                <div class="paddingLeft2"><img src="./images//winLogo.svg" ></div>
+                <div class="regHdr"><h2 id="regHdrh4">Register here to enroll into courses</h2></div>
+              </div>
+              <div class="modalBG1" class="paddingLeft2" id="inputPlaceholder">
+                <img src="./images/LoginImg.svg" >
+             <div id="register">
+                <div class="modalBG2" id="registerUser">
+                <input type="text" placeholder="NIELIT ID *" id="nielitid"/>
+                <input type="email" placeholder="Email ID*" id="registeremail" />
+                <input type="password" placeholder="Password*" id="registerpassword"/>
+                <button class="primaryButtonLong" onclick="handleRegisterSubmit()" id="registerbtn">Register</button>
+                <div class="loader"id="loader"style="margin-left: 35%;display:none"></div>
+                <p class="errorText" id="errorTextR"></p>
+                </div>
+             </div>
+             <div id="login" style="display: none;">
+              <div class="modalBG2" >
+              <input type="email" placeholder="Email ID*" id="loginemail"/>
+              <input type="password" placeholder="Password*" id="loginpassword"/>
+              <p class="info" id="info">Forgot Password?</p>
+              <button class="primaryButtonLong" onclick="handleLoginSubmit()" id="loginbtn">Login</button>
+              <div class="loader" id="loaderL" style="margin-left: 35%;display:none"></div>
+                        <p class="errorText" id="errorTextL"></p>
+              </div>
+              </div>
+    
+            </div>
+    
+            <div class="modalBG1" class="paddingLeft2" id="successMsgholder" style="display: none;">
+              <img src="./images/Person.svg" >
+           <div id="succMsg" class="succMsg textCenter">
+              <img src="./images/Thumbsup.svg" />
+              <p> You have Registered Succesfully!</p>
+              <p> Welcome to WIN Assessments</p>
+           </div>
+          </div>
+          
+          </div>
+          </div>
+   
+    
+
+      <!-- <section class="bottomNav">
+        <nav>
+            <img src="./images/logo.svg" width="100%" style="max-width: 150px;">
+        <ul>
+            <li></li>
+            <li><a href="#home">NIELIT Home</a></li>
+            <li><a href="#news">Win Home</a></li>
+            <li><a href="#contact">WIN Assessments Catalogue</a></li>
+            <li><a href="#about">WIN LOGIN</a></li>
+          </ul>
+          <img src="./images/Career.png" width="100%" style="max-width: 150px;">
+        </nav>
+    </section> -->
+
+
+
+
+    <footer class="textCenter">
+        <div>DISCLAIMER <span class="paddingLeft2">TERMS AND CONDITIONS Copyright&#169;2023</spanp>	</div>
+    </footer>
+    <script src="./index.js"></script>
 </body>
 </html>

@@ -209,10 +209,10 @@ footer {
 }
 
 select {
-  width: 300px;
+  width: 90%;
   padding: 10px 15px;
   border: 1px solid #c9cdd6;
-  border-radius: 4px;
+  border-radius: 5px;
   color: #33415c;
   font-size: medium;
   line-height: 300px;
@@ -245,7 +245,7 @@ select {
   width: fit-content;
 }
 
-.imx{
+.imx {
   text-align: center;
 }
 
@@ -451,6 +451,10 @@ select {
   justify-content: space-between;
 }
 
+.flexer div {
+  margin-bottom: 10px;
+}
+
 .flexanchor {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -625,12 +629,19 @@ img {
   height: 1rem;
 }
 
-.regHdr{
+.regHdr {
   /* padding-left: 10%; */
   color: #733e90;
 }
 
+.searchCourse{
+  margin-left: 40%;
+}
+
 @media screen and (min-width: 768px) {
+  body {
+    /* overflow-x: auto; */
+  }
   .mobileApp {
     display: none !important;
   }
@@ -641,6 +652,9 @@ img {
 
 /* Background image for mobile */
 @media screen and (max-width: 767px) {
+  body {
+    /* overflow-x: auto; */
+  }
   .mobileApp {
     display: block !important;
   }
@@ -650,6 +664,9 @@ img {
 }
 
 @media only screen and (max-width: 1200px) {
+  body {
+    overflow-x: auto;
+  }
   .cardGrid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -662,26 +679,44 @@ img {
     justify-content: space-between;
   }
 }
+@media only screen and (max-width: 900px) {
+  .flexer {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+  }
+}
 
 @media only screen and (max-width: 900px) {
   .cardGrid {
     grid-template-columns: repeat(2, 1fr);
   }
   .flexer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
+  }
+  .flexanchor{
+    /* justify-content: center; */
+    text-align: center;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .cardGrid {
-    grid-template-columns: 1fr;
+.flexanchor{
+  /* justify-content: center; */
+  text-align: center;
+}
+  .searchCourse{
+    margin-left: 15%;
   }
   .flexer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid; */
+    grid-template-columns: 1fr;
     justify-content: space-between;
+  }
+  .cardGrid {
+    grid-template-columns: 1fr;
   }
 }
 

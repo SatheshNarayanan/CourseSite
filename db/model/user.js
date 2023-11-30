@@ -22,6 +22,10 @@ const UserMaster = dbConn.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    COURSENAME: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     ACTIVE: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
