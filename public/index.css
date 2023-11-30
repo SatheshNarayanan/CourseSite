@@ -719,6 +719,10 @@ img {
   .cardGrid {
     grid-template-columns: 1fr;
   }
+
+  .bottomNav {
+    padding: 2% 1%;
+  }
 }
 
 /* On smaller screens, decrease text size */
