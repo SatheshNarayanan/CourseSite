@@ -50,7 +50,7 @@ header {
     justify-content: center; /* Center horizontally */
     cursor: pointer;
     position: absolute;
-    top: 30px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
   }
@@ -310,12 +310,12 @@ select {
   padding: 20px;
   border: 1px solid #888;
   border-radius: 4px;
-  min-width: 70%;
+  min-width: 50%;
   width: fit-content;
 }
 
 .imx {
-  text-align: center;
+ padding-left: 10%;
 }
 
 /* The Close Button */
@@ -721,7 +721,18 @@ img {
 }
 
 .navHdr {
-  padding: 0% 2%;
+  padding: 2% 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-content: space-around;
+}
+
+.imgWeb{
+  display: block;
+}
+.imgMob{
+  display: none;
 }
 @media screen and (min-width: 768px) {
   body {
@@ -788,6 +799,18 @@ img {
 }
 
 @media only screen and (max-width: 600px) {
+
+  .imx {
+    padding-left: 0%;
+   }
+
+  .imgWeb{
+    display: none;
+  }
+  .imgMob{
+    display: block;
+  }
+
   .btNavMob {
     display: block;
   }
