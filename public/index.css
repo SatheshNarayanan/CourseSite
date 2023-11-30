@@ -719,9 +719,19 @@ img {
   gap: 30px;
   justify-content: space-between;
 }
+.webHdr{
+  display: block;
+}
+.mobHdr{
+  display: none;
+}
 
 .navHdr {
-  padding: 2% 2%;
+  padding: 0% 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  justify-content: space-around;
 }
 
 .imgWeb{
@@ -796,7 +806,15 @@ img {
 
 @media only screen and (max-width: 600px) {
 
+  .webHdr{
+    display: none;
+  }
+  .mobHdr{
+    display: block;
+  }
+
   .navhdr{
+    padding: 2% 2%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
