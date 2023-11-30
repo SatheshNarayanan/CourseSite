@@ -638,6 +638,21 @@ img {
   margin-left: 40%;
 }
 
+.modPad{
+  padding: 8% 0% 4% 0%; 
+}
+
+.btNavMob{
+  display: none;
+}
+
+.btNavMobFl{
+  margin-left: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  justify-content: space-between;
+}
 @media screen and (min-width: 768px) {
   body {
     /* overflow-x: auto; */
@@ -703,6 +718,33 @@ img {
 }
 
 @media only screen and (max-width: 600px) {
+
+  .btNavMob{
+    display: block;
+  }
+
+  .bottomNavUl{
+    display: none;
+  }
+
+  .modalBG{
+    grid-template-columns: 1fr;
+  }
+
+  .regHdr{
+    width: 100%;
+  }
+
+  .modPad{
+    padding: 30% 0% 4% 0%; 
+  }
+
+  .winLogMob{
+    display: none;
+  }
+  .logImg{
+    display: none;
+  }
 .flexanchor{
   /* justify-content: center; */
   text-align: center;
