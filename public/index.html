@@ -11,15 +11,15 @@
 <body>
     <header>
         <nav>
-            <img src="./images/logo.svg">
+            <!-- <img src="./images/logo.svg"> -->
+            <div></div>
         <ul>
-            <li></li>
             <li><a href="#home">NIELIT Home</a></li>
             <li><a href="#news">Win Home</a></li>
             <li><a href="#contact">WIN Assessments Catalogue</a></li>
-            <li><a href="#about">WIN LOGIN</a></li>
+            <li><a href="./dumm.html">WIN LOGIN</a></li>
           </ul>
-          <img src="./images/Career.svg">
+          <!-- <img src="./images/Career.svg"> -->
         </nav>
         </header>
 
@@ -30,13 +30,17 @@
 
                 <div class="mySlides fade">
                   <!-- <div class="numbertext">1 / 3</div> -->
-                  <img src="./images/Db1.svg" style="width:100%">
+                  <img class="webApp" src="./images/Db1.jpg" style="width:100%">
+                  <img class="mobileApp" src="./images/Db1mob.jpg" style="min-width:100%">
+
                   <!-- <div class="text">Caption Text</div> -->
                 </div>
                 
                 <div class="mySlides fade">
                   <!-- <div class="numbertext">2 / 3</div> -->
-                  <img src="./images/Db2.svg" style="width:100%">
+                  <img  class="webApp" src="./images/Db2.jpg" style="width:100%">
+                  <img class="mobileApp" src="./images/Db2mob.jpg" style="min-width:100%">
+
                                     <!-- <div class="text">Caption Two</div> -->
                 </div>
                 
@@ -56,25 +60,40 @@
         <h2 class="textPurple textCenter"> WIN ASSESMENTS CATALOGUE</h2>
         <div class="flexer">
             <div class="paddingLeft2">
-                <select id="selectSector" aria-placeholder="Select Sector">
-                    <option value="" disabled selected hidden>Select Sector</option>
+                <select id="selectSector" aria-placeholder="NIELIT Sector">
+                    <option value="" disabled selected hidden>NILET Sector</option>
                 </select>
             </div>
-            <div class="">
-              <div class="group">
-                <!-- <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                    <g>
-                        <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-                    </g>
-                </svg> -->
-                <input placeholder="Search" type="text" class="input" id="searchCourse" onchange="filterCourses()">
-            </div>
+            <div class="paddingLeft2">
+              <select id="selectSector" aria-placeholder="NIELIT Course">
+                  <option value="" disabled selected hidden>NILET Course</option>
+              </select>
           </div>
-            
+          <div class="paddingLeft2">
+            <select id="selectSector" aria-placeholder="Win Job/Tech Assesment">
+                <option value="" disabled selected hidden>Win Job/Tech Assesment</option>
+            </select>
+        </div>
+        <div class="paddingLeft2 flexanchor">
+         <a onclick="modClick('wdug')">What do you get?</a>
+         <a  onclick="modClick('enroll')">Enroll</a>
+      </div>
+          
             <div>
                 <!-- <input type="textfield" placeholder="Search Course"/> -->
             </div>
         </div>
+<br />
+        <div class="" style="margin-left: 40%;">
+          <div class="group"> 
+             <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                <g>
+                    <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+                </g>
+            </svg> 
+            <input placeholder="Search" type="text" class="input" id="searchCourse" onchange="filterCourses()">
+        </div>
+      </div> 
         <br />
         <div class="cardGrid" id="cardGrid">
         </div>
@@ -94,13 +113,28 @@
         </nav>
     </section>
 
+    <div id="myModal1" class="modal" >
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" id="close1">&times;</span>
+        <div class="enroll imx" id="enroll">
+          <img src="./images/enroll.jpg" style="max-height: 600px;" />
+        </div>
+        <div class="wdug imx" id="wdug">
+          <img src="./images/wdug.jpg" style="max-height: 600px;" />
+        </div>
+      </div>
+    </div>
+    </div>
+
     <div id="myModal" class="modal" >
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close" id="close">&times;</span>
           <div class="modalBG" >
             <div class="paddingLeft2"><img src="./images//winLogo.svg" ></div>
-            <div class="radio-inputs" >
+            <div class="regHdr"><h2 id="regHdrh4">Register here to enroll into courses</h2></div>
+            <!-- <div class="radio-inputs" >
                 <label class="radio">
                   <input type="radio" name="radio" checked="" value="register" id="registerRadio" onchange="handleRegister()">
                   <span class="name" >Register</span>
@@ -109,7 +143,7 @@
                   <input type="radio" name="radio" value="register" id="loginRadio" onchange="handleLogin()">
                   <span class="name" >Login</span>
                 </label>
-              </div>
+              </div> -->
           </div>
           <div class="modalBG1" class="paddingLeft2" id="inputPlaceholder">
             <img src="./images/LoginImg.svg" >

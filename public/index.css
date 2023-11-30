@@ -24,7 +24,7 @@ nav {
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 3.5%;
 }
 
 nav li {
@@ -44,7 +44,7 @@ nav li {
 
 nav a {
   display: block;
-  font-size: 16px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
@@ -132,7 +132,9 @@ nav a:hover {
   gap: 20px;
   justify-items: center;
   margin-inline: auto;
-  
+  margin-left: 2%;
+  margin-right: 2%;
+
   /* align-items: center; */
 }
 
@@ -158,6 +160,10 @@ nav a:hover {
 
 .fontSmall {
   font-size: small;
+}
+
+.fontMedium {
+  font-size: medium;
 }
 
 .secondaryFont {
@@ -216,8 +222,8 @@ select {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 5%; /* Location of the box */
+  z-index: 10; /* Sit on top */
+  padding-top: 2.5%; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -237,6 +243,10 @@ select {
   border-radius: 4px;
   min-width: 70%;
   width: fit-content;
+}
+
+.imx{
+  text-align: center;
 }
 
 /* The Close Button */
@@ -435,25 +445,20 @@ select {
   }
 }
 
-@media only screen and (max-width: 1200px) {
-  .cardGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .modal-content {
-    width: fit-content;
-  }
+.flexer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
 }
 
-@media only screen and (max-width: 900px) {
-  .cardGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .cardGrid {
-    grid-template-columns: 1fr;
-  }
+.flexanchor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #733e90;
+  font-weight: 700;
 }
 
 /* slideshow css starts */
@@ -574,22 +579,14 @@ img {
   }
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev,
-  .next,
-  .text {
-    font-size: 11px;
-  }
-}
-
 .group {
+  /* text-align: ; */
   display: flex;
   line-height: 28px;
   align-items: center;
   position: relative;
   max-width: 350px;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 
 .input {
@@ -628,8 +625,71 @@ img {
   height: 1rem;
 }
 
-.flexer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
+.regHdr{
+  /* padding-left: 10%; */
+  color: #733e90;
+}
+
+@media screen and (min-width: 768px) {
+  .mobileApp {
+    display: none !important;
+  }
+  .webApp {
+    display: block !important;
+  }
+}
+
+/* Background image for mobile */
+@media screen and (max-width: 767px) {
+  .mobileApp {
+    display: block !important;
+  }
+  .webApp {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .modal-content {
+    width: fit-content;
+  }
+  .flexer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .flexer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+  .flexer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
 }

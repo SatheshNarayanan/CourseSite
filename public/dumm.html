@@ -3,8 +3,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./index.css"></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Sru</h1>
+    <div id="login" style="display: none;">
+        <div class="modalBG2" >
+        <input type="email" placeholder="Email ID*" id="loginemail"/>
+        <input type="password" placeholder="Password*" id="loginpassword"/>
+        <p class="info" id="info">Forgot Password?</p>
+        <button class="primaryButtonLong" onclick="handleLoginSubmit()" id="loginbtn">Login</button>
+        <div class="loader" id="loaderL" style="margin-left: 35%;display:none"></div>
+                  <p class="errorText" id="errorTextL"></p>
+        </div>
+        </div>
 </body>
 </html>

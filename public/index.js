@@ -1,5 +1,5 @@
 const backenduri = window.location.origin;
-console.log(window.location)
+console.log(window.location);
 
 let cardList = document.getElementById("cardGrid");
 
@@ -7,7 +7,19 @@ let selectSector = document.getElementById("selectSector");
 
 var modal = document.getElementById("myModal");
 
+var modal1 = document.getElementById("myModal1");
+
 var closeModal = document.getElementById("close");
+
+var closeModal1 = document.getElementById("close1");
+
+let enroll = document.getElementById("enroll");
+
+let wdug = document.getElementById("wdug");
+
+let regHdr = document.getElementById("regHdrh4");
+
+let activeCourse = "";
 
 var registerElement = document.getElementById("register");
 
@@ -49,6 +61,16 @@ function handleLogin() {
   loginElement.style.display = "block";
 }
 
+closeModal1.onclick = function () {
+  // errorTextL.innerHTML = "";
+  // errorTextR.innerHTML = "";
+  // inputPlaceholder.style.display = "flex";
+  // successMsgholder.style.display = "none";
+  // registerElement.style.display = "block";
+  // loginElement.style.display = "none";
+  modal1.style.display = "none";
+};
+
 closeModal.onclick = function () {
   errorTextL.innerHTML = "";
   errorTextR.innerHTML = "";
@@ -69,6 +91,7 @@ window.onclick = function (event) {
     // loginElement.style.display = "none";
     registerbtn.value = "";
     modal.style.display = "none";
+    modal1.style.display = "none";
   }
 };
 
@@ -145,6 +168,7 @@ function handleRegisterSubmit() {
       nielitid: nielitid,
       email: emailid,
       password: password,
+      course: activeCourse
     };
 
     fetch(`${backenduri}/register`, {
@@ -290,9 +314,9 @@ function cardRender(sector) {
     let cardContent = document.createElement("div");
     cardContent.setAttribute("class", "paddingLeft5 wordBreak paddingBottom4");
 
-    let header4 = document.createElement("h3");
+    let header4 = document.createElement("h4");
     header4.innerHTML = element.title;
-    header4.setAttribute("style", "margin-bottom : 0px");
+    header4.setAttribute("style", "margin-bottom : 15px");
 
     let starRating = document.createElement("div");
     // starRating.setAttribute("class","rate")
@@ -315,19 +339,23 @@ function cardRender(sector) {
 
     let costTag = document.createElement("div");
     costTag.setAttribute("style", "margin-bottom : 10px; margin-top : 4px");
+    costTag.setAttribute("class", "fontMedium");
 
     costTag.innerHTML = `Cost INR ${element.cost}`;
 
     let buttonTag = document.createElement("button");
     buttonTag.setAttribute("class", "primaryButton");
-    buttonTag.innerHTML = `Apply`;
+    buttonTag.innerHTML = `Enroll`;
     buttonTag.addEventListener("click", function (e) {
       let user = JSON.parse(localStorage.getItem("user"));
       if (user?.EMAIL) {
         alert("you have logged in");
       } else {
         // showDialog()
+        console.log("sss",element.title)
         modal.style.display = "block";
+        regHdr.innerHTML = `Register here to enroll in "${element.title}"`;
+        activeCourse = element.title;
       }
     });
     //add onclick function to all button here
@@ -451,7 +479,7 @@ sC.addEventListener("keydown", function filterCourses(e) {
 
     let buttonTag = document.createElement("button");
     buttonTag.setAttribute("class", "primaryButton");
-    buttonTag.innerHTML = `Apply`;
+    buttonTag.innerHTML = `Enroll`;
     buttonTag.addEventListener("click", function (e) {
       let user = JSON.parse(localStorage.getItem("user"));
       if (user?.EMAIL) {
@@ -475,86 +503,99 @@ sC.addEventListener("keydown", function filterCourses(e) {
     cardList.appendChild(cardDiv);
   });
 });
-// function filterCourses() {
-//   let val = document.getElementById("searchCourse").value;
 
-//   // cardList.innerHTML=""
-//   let data =
-//     val === ""
-//       ? filteredData
-//       : filteredData.filter((element) =>
-//           element.title.toLowerCase().includes(val.toLowerCase())
-//         );
+function filterCourses() {
+  let val = document.getElementById("searchCourse").value;
 
-//   console.log("called", data);
+  // cardList.innerHTML=""
+  let data =
+    val === ""
+      ? filteredData
+      : filteredData.filter((element) =>
+          element.title.toLowerCase().includes(val.toLowerCase())
+        );
 
-//   data.forEach((element, index) => {
-//     if (index === 0) {
-//       let dumm = document.createElement("div");
-//       dumm.setAttribute('style',"width :100%;height:600px")
-//       cardList.innerHTML = "";
-//     }
-//     let cardDiv = document.createElement("div");
-//     cardDiv.setAttribute("class", "card");
+  console.log("called", data);
 
-//     let imgElement = document.createElement("img");
-//     imgElement.setAttribute("class", "courseImage");
-//     imgElement.setAttribute("src", element.img);
+  data.forEach((element, index) => {
+    if (index === 0) {
+      let dumm = document.createElement("div");
+      dumm.setAttribute("style", "width :100%;height:600px");
+      cardList.innerHTML = "";
+    }
+    let cardDiv = document.createElement("div");
+    cardDiv.setAttribute("class", "card");
 
-//     let cardContent = document.createElement("div");
-//     cardContent.setAttribute("class", "paddingLeft10 wordBreak paddingBottom4");
+    let imgElement = document.createElement("img");
+    imgElement.setAttribute("class", "courseImage");
+    imgElement.setAttribute("src", element.img);
 
-//     let header4 = document.createElement("h4");
-//     header4.innerHTML = element.title;
-//     header4.setAttribute("style", "margin-bottom : 5px");
+    let cardContent = document.createElement("div");
+    cardContent.setAttribute("class", "paddingLeft10 wordBreak paddingBottom4");
 
-//     let starRating = document.createElement("div");
-//     // starRating.setAttribute("class","rate")
+    let header4 = document.createElement("h4");
+    header4.innerHTML = element.title;
+    header4.setAttribute("style", "margin-bottom : 5px");
 
-//     let count = element?.rating;
-//     for (let i = 0; i < 5; i++) {
-//       let star1 = document.createElement("img");
-//       star1.setAttribute(
-//         "src",
-//         count > 0 ? "./images/star.svg" : "./images/emptystar.svg"
-//       );
-//       count--;
-//       starRating.appendChild(star1);
-//     }
+    let starRating = document.createElement("div");
+    // starRating.setAttribute("class","rate")
 
-//     let durationTag = document.createElement("div");
-//     durationTag.setAttribute("style", "margin-bottom : 0px; margin-top : 10px");
-//     durationTag.setAttribute("class", "fontSmall secondaryFont");
-//     durationTag.innerHTML = `Duration - ${element.duration}`;
+    let count = element?.rating;
+    for (let i = 0; i < 5; i++) {
+      let star1 = document.createElement("img");
+      star1.setAttribute(
+        "src",
+        count > 0 ? "./images/star.svg" : "./images/emptystar.svg"
+      );
+      count--;
+      starRating.appendChild(star1);
+    }
 
-//     let costTag = document.createElement("div");
-//     costTag.setAttribute("style", "margin-bottom : 10px; margin-top : 4px");
+    let durationTag = document.createElement("div");
+    durationTag.setAttribute("style", "margin-bottom : 0px; margin-top : 10px");
+    durationTag.setAttribute("class", "fontSmall secondaryFont");
+    durationTag.innerHTML = `Duration - ${element.duration}`;
 
-//     costTag.innerHTML = `Cost INR ${element.cost}`;
+    let costTag = document.createElement("div");
+    costTag.setAttribute("style", "margin-bottom : 10px; margin-top : 4px");
 
-//     let buttonTag = document.createElement("button");
-//     buttonTag.setAttribute("class", "primaryButton");
-//     buttonTag.innerHTML = `Apply`;
-//     buttonTag.addEventListener("click", function (e) {
-//       let user = JSON.parse(localStorage.getItem("user"));
-//       if (user?.EMAIL) {
-//         alert("you have logged in");
-//       } else {
-//         // showDialog()
-//         modal.style.display = "block";
-//       }
-//     });
-//     //add onclick function to all button here
+    costTag.innerHTML = `Cost INR ${element.cost}`;
 
-//     cardContent.appendChild(header4);
-//     cardContent.appendChild(starRating);
-//     cardContent.appendChild(durationTag);
-//     cardContent.appendChild(costTag);
-//     cardContent.appendChild(buttonTag);
+    let buttonTag = document.createElement("button");
+    buttonTag.setAttribute("class", "primaryButton");
+    buttonTag.innerHTML = `Apply`;
+    buttonTag.addEventListener("click", function (e) {
+      let user = JSON.parse(localStorage.getItem("user"));
+      if (user?.EMAIL) {
+        alert("you have logged in");
+      } else {
+        // showDialog()
+        modal.style.display = "block";
+      }
+    });
+    //add onclick function to all button here
 
-//     cardDiv.appendChild(imgElement);
-//     cardDiv.appendChild(cardContent);
+    cardContent.appendChild(header4);
+    cardContent.appendChild(starRating);
+    cardContent.appendChild(durationTag);
+    cardContent.appendChild(costTag);
+    cardContent.appendChild(buttonTag);
 
-//     cardList.appendChild(cardDiv);
-//   });
-// }
+    cardDiv.appendChild(imgElement);
+    cardDiv.appendChild(cardContent);
+
+    cardList.appendChild(cardDiv);
+  });
+}
+
+function modClick(element) {
+  modal1.style.display = "block";
+
+  if (element === "enroll") {
+    enroll.style.display = "block";
+    wdug.style.display = "none";
+  } else {
+    enroll.style.display = "none";
+    wdug.style.display = "block";
+  }
+}
