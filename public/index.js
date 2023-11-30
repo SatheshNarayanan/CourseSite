@@ -44,8 +44,12 @@ const loginRadio = document.getElementById("loginRadio");
 const loader = document.getElementById("loader");
 const loaderL = document.getElementById("loaderL");
 
-let filteredData = [];
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('show');
+}
 
+let filteredData = [];
 function handleRegister() {
   console.log("called");
   errorTextL.innerHTML = "";
