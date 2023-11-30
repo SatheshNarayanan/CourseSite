@@ -447,17 +447,14 @@ select {
 
 .flexer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
-}
-
-.flexer div {
-  margin-bottom: 10px;
 }
 
 .flexanchor {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* padding-left: 10%; */
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
@@ -589,17 +586,17 @@ img {
   line-height: 28px;
   align-items: center;
   position: relative;
-  max-width: 350px;
+  /* max-width: 350px; */
   /* margin-left: auto; */
 }
 
 .input {
-  width: 300px;
+  width: 90%;
   height: 40px;
   font-size: medium;
   border: none;
   border-radius: 6px;
-  background-color: rgb(243, 244, 246);
+  background-color: white;
   padding: 0px 0px 0px 15px;
   border: 1px solid #c9cdd6;
 
@@ -634,24 +631,28 @@ img {
   color: #733e90;
 }
 
-.searchCourse{
+.searchCourse {
   margin-left: 40%;
 }
 
-.modPad{
-  padding: 8% 0% 4% 0%; 
+.modPad {
+  padding: 8% 0% 4% 0%;
 }
 
-.btNavMob{
+.btNavMob {
   display: none;
 }
 
-.btNavMobFl{
+.btNavMobFl {
   margin-left: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   justify-content: space-between;
+}
+
+.navHdr {
+  padding: 0% 2%;
 }
 @media screen and (min-width: 768px) {
   body {
@@ -711,52 +712,64 @@ img {
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
   }
-  .flexanchor{
+  .flexanchor {
     /* justify-content: center; */
     text-align: center;
   }
 }
 
 @media only screen and (max-width: 600px) {
-
-  .btNavMob{
+  .btNavMob {
     display: block;
   }
 
-  .bottomNavUl{
+  .bottomNavUl {
     display: none;
   }
 
-  .modalBG{
+  .modalBG {
     grid-template-columns: 1fr;
   }
 
-  .regHdr{
+  .regHdr {
     width: 100%;
   }
 
-  .modPad{
-    padding: 30% 0% 4% 0%; 
+  .modPad {
+    padding: 30% 0% 4% 0%;
   }
 
-  .winLogMob{
+  .winLogMob {
     display: none;
   }
-  .logImg{
+  .logImg {
     display: none;
   }
-.flexanchor{
-  /* justify-content: center; */
-  text-align: center;
-}
-  .searchCourse{
-    margin-left: 15%;
+  .flexanchor {
+    /* justify-content: center; */
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    margin-left: 5%;
+    text-align: center;
+  }
+  .searchCourse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* margin-left: 15%; */
   }
   .flexer {
     /* display: grid; */
     grid-template-columns: 1fr;
     justify-content: space-between;
     margin-left: 5%;
+  }
+
+  .flexanchor div {
+    margin-bottom: 10px;
+  }
+  .flexer div {
+    margin-bottom: 10px;
   }
   .cardGrid {
     grid-template-columns: 1fr;
