@@ -714,6 +714,7 @@ img {
     /* display: grid; */
     grid-template-columns: 1fr;
     justify-content: space-between;
+    margin-left: 5%;
   }
   .cardGrid {
     grid-template-columns: 1fr;
