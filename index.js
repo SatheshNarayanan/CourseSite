@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.post("/register", async (req, res) => {
   try {
-    let { email, password, nielitid, course } = req.body;
+    let { email, password, nielitid, course, name } = req.body;
     let find = await UserMaster.findAll({
       where: {
         EMAIL: email,
@@ -39,7 +39,8 @@ app.post("/register", async (req, res) => {
         NIELITID: nielitid,
         EMAIL: email,
         PASSWORD: password,
-        COURSENAME: course
+        COURSENAME: course,
+        NAME : name
       });
       return res
         .status(200)

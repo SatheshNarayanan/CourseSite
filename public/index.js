@@ -9,7 +9,6 @@ let selectCourse = document.getElementById("selectCourse");
 
 let selectJob = document.getElementById("selectJob");
 
-
 var modal = document.getElementById("myModal");
 
 var modal1 = document.getElementById("myModal1");
@@ -45,8 +44,8 @@ const loader = document.getElementById("loader");
 const loaderL = document.getElementById("loaderL");
 
 function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('show');
+  const navLinks = document.querySelector(".nav-links");
+  navLinks.classList.toggle("show");
 }
 
 let filteredData = [];
@@ -156,7 +155,7 @@ let cardData = [
 ];
 
 function handleRegisterSubmit() {
-  console.log("handleRegistration called")
+  console.log("handleRegistration called");
   errorTextR.innerHTML = "";
   errorTextL.innerHTML = "";
   loader.style.display = "block";
@@ -165,7 +164,8 @@ function handleRegisterSubmit() {
   registerbtn.style.display = "none";
   let nielitid = document.getElementById("nielitid").value;
   let emailid = document.getElementById("registeremail").value;
-  let password = document.getElementById("registerpassword").value;
+  let phoneno = document.getElementById("registerphoneno").value;
+  let name = document.getElementById("registername").value;
 
   if (emailid == "" || nielitid == "" || password == "") {
     errorTextR.innerHTML = "All fields are mandatory!";
@@ -177,8 +177,9 @@ function handleRegisterSubmit() {
     const data = {
       nielitid: nielitid,
       email: emailid,
-      password: password,
-      course: activeCourse
+      password: phoneno,
+      course: activeCourse,
+      name: name,
     };
 
     fetch(`${backenduri}/register`, {
@@ -364,7 +365,7 @@ function cardRender(sector) {
         alert("you have logged in");
       } else {
         // showDialog()
-        console.log("sss",element.title)
+        console.log("sss", element.title);
         modal.style.display = "block";
         regHdr.innerHTML = `Register here to enroll in "${element.title}"`;
         activeCourse = element.title;

@@ -21,8 +21,8 @@
       <!-- Navigation Links -->
       <ul class="nav-links">
         <li><a href="#home">NIELIT Home</a></li>
-        <li><a href="#contact">WIN Assessments Catalogue</a></li>
-        <li><a href="/">Win Home</a></li>
+        <li><a href="#contact"> Catalogue</a></li>
+        <!-- <li><a href="/">Win Home</a></li> -->
         <li><a href="./login.html">WIN LOGIN</a></li>
       </ul>
     </nav>
@@ -62,7 +62,8 @@
    
     
       <section>
-        <h2 class="textPurple textCenter"> WIN&trade;	 ASSESMENTS CATALOGUE</h2>
+        <!-- <h2 class="textPurple textCenter"> WIN&trade;	 ASSESMENTS CATALOGUE</h2> -->
+        <h2 class="textPurple textCenter">CATALOGUE</h2>
         <div class="flexer">
             <div class="paddingLeft2">
                 <select id="selectSector" aria-placeholder="Sector">
@@ -97,8 +98,8 @@
             </svg> 
             <input placeholder="Search" type="text" class="input" id="searchCourse" onchange="filterCourses()">
         </div>
-        <div class=" textCenter"><a onclick="modClick('wdug')">What do you get?</a></div>
-        <div class=" textCenter"><a  onclick="modClick('enroll')">Enroll & Fee Detail</a></div>
+        <div class=" textCenter mobPad"><a onclick="modClick('wdug')">What do you get?</a></div>
+        <div class=" textCenter mobPad"><a  onclick="modClick('enroll')">Enroll & Fee Detail</a></div>
       </div> 
         <br />
         <div class="cardGrid" id="cardGrid">
@@ -118,8 +119,8 @@
         <ul class="bottomNavUl">
             <li></li>
             <li><a href="#home">NIELIT Home</a></li>
-            <li><a href="#news">Win Home</a></li>
-            <li><a href="./">WIN Assessments Catalogue</a></li>
+            <!-- <li><a href="#news">Win Home</a></li> -->
+            <li><a href="./">Catalogue</a></li>
             <li><a href="./login.html">WIN LOGIN</a></li>
           </ul>
           <img src="./images/Career.png" width="100%" style="max-width: 150px;">
@@ -164,9 +165,10 @@
             <img  class="logImg" src="./images/LoginImg.svg" >
          <div id="register">
             <div class="modalBG2" id="registerUser">
-            <input type="text" placeholder="NIELIT ID *" id="nielitid"/>
+            <input type="text" placeholder="Institution ID*" id="nielitid"/>
+            <input type="text" placeholder="Name*" id="registername" />
             <input type="email" placeholder="Email ID*" id="registeremail" />
-            <input type="password" placeholder="Password*" id="registerpassword"/>
+            <input type="text" placeholder="Phone no*" id="registerphoneno"/>
             <button class="primaryButtonLong" onclick="handleRegisterSubmit()" id="registerbtn">Register</button>
             <div class="loader"id="loader"style="margin-left: 35%;display:none"></div>
             <p class="errorText" id="errorTextR"></p>

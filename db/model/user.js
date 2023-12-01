@@ -14,6 +14,10 @@ const UserMaster = dbConn.define(
       type: DataTypes.STRING(500),
       allowNull: false,
     },
+    NAME: {
+      type: DataTypes.STRING(500),
+      allowNull: false,
+    },
     EMAIL: {
       type: DataTypes.STRING(500),
       allowNull: false,
