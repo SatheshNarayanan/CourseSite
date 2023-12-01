@@ -167,7 +167,7 @@ function handleRegisterSubmit() {
   let phoneno = document.getElementById("registerphoneno").value;
   let name = document.getElementById("registername").value;
 
-  if (emailid == "" || nielitid == "" || password == "") {
+  if (emailid == "" || nielitid == "" || phoneno == "" || name == "") {
     errorTextR.innerHTML = "All fields are mandatory!";
     loader.style.display = "none";
     // loginRadio.disabled = false;
