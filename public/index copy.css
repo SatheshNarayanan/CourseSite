@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 body {
   margin: 0;
   padding: 0;
@@ -21,10 +14,7 @@ header {
 
 .menu-icon {
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   cursor: pointer;
 }
 
@@ -37,11 +27,8 @@ header {
 
 .nav-links {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
@@ -58,29 +45,18 @@ header {
 
 @media (max-width: 766px) {
   .menu-icon {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; /* Center vertically */
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
     cursor: pointer;
     position: absolute;
     top: 15px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
   }
   .nav-links {
     display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 100%;
     text-align: center;
     position: absolute;
@@ -89,8 +65,6 @@ header {
     z-index: 1;
   }
   .nav-links.show {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .bar {
@@ -110,15 +84,10 @@ header {
 nav {
   /* position:relative; */
 
-  display: -ms-grid;
-
   display: grid;
-  -ms-grid-columns: 1fr 3fr 1fr;
   grid-template-columns: 1fr 3fr 1fr;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 nav ul {
@@ -167,36 +136,25 @@ header nav a::after {
   height: 0.1em;
   background-color: #733e90;
   opacity: 0;
-  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, -webkit-transform 300ms;
-  -o-transition: opacity 300ms, transform 300ms;
   transition: opacity 300ms, transform 300ms;
-  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
 }
 
 nav a:hover::after,
 nav a:focus::after {
   color: #733e90;
   opacity: 1;
-  -webkit-transform: translate3d(0, 0.2em, 0);
-          transform: translate3d(0, 0.2em, 0);
+  transform: translate3d(0, 0.2em, 0);
 }
 
 header nav li a::after {
   opacity: 1;
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: scale(0);
+  transform-origin: center;
 }
 
 header nav li a:hover::after,
 header nav li a:focus::after {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 /* nav a:visited {
@@ -230,20 +188,15 @@ nav a:hover {
 .card {
   background: #fdfdfd;
   max-width: 400px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
   max-height: 500px;
   top: 94px;
   border-radius: 4px;
-  -webkit-box-shadow: 0px 0px 4px 0px #00000033;
-          box-shadow: 0px 0px 4px 0px #00000033;
+  box-shadow: 0px 0px 4px 0px #00000033;
 }
 
 .cardGrid {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-items: center;
@@ -293,8 +246,6 @@ nav a:hover {
   color: #333333;
   border: none;
   font-size: medium;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
   /* background-color : #707070 */
 }
@@ -306,8 +257,7 @@ nav a:hover {
   color: white;
   border: none;
   background-color: #733e90;
-  -webkit-box-shadow: 0px 0px 4px 0px #00000033;
-          box-shadow: 0px 0px 4px 0px #00000033;
+  box-shadow: 0px 0px 4px 0px #00000033;
   font-size: medium;
 }
 
@@ -361,13 +311,11 @@ select {
   border: 1px solid #888;
   border-radius: 4px;
   min-width: 50%;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
 .imx {
-padding-left: 10%;
+ padding-left: 10%;
 }
 
 /* The Close Button */
@@ -387,26 +335,19 @@ padding-left: 10%;
 
 .radio-inputs {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   border-radius: 30px;
   background: rgba(115, 62, 144, 0.14);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-          box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
   /* padding: 0.25rem; */
   width: 300px;
   font-size: large;
 }
 
 .radio-inputs .radio {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
   text-align: center;
 }
 
@@ -415,22 +356,14 @@ padding-left: 10%;
 }
 
 .radio-inputs .radio .name {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   border-radius: 30px;
   border: none;
   padding: 20px 0;
   color: rgba(51, 65, 85, 1);
-  -webkit-transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
 
@@ -441,48 +374,28 @@ padding-left: 10%;
 }
 
 .modalBG {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
   grid-template-columns: 1fr 2fr;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .modalBG1 {
   margin: 2% 0% 0% 0%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   /* grid-template-columns: 2fr 2fr; */
   gap: 50px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalBG2 {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   grid-row-gap: 20px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .modalBG2 input {
@@ -502,8 +415,6 @@ padding-left: 10%;
   color: #333333;
   border: none;
   font-size: medium;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
   /* background-color : #707070 */
 }
@@ -515,8 +426,7 @@ padding-left: 10%;
   color: white;
   border: none;
   background-color: #733e90;
-  -webkit-box-shadow: 0px 0px 4px 0px #00000033;
-          box-shadow: 0px 0px 4px 0px #00000033;
+  box-shadow: 0px 0px 4px 0px #00000033;
   font-size: medium;
 }
 
@@ -532,19 +442,10 @@ padding-left: 10%;
 }
 
 .succMsg {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: large;
 }
 
@@ -606,37 +507,25 @@ padding-left: 10%;
 
 @keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 .flexer {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .flexanchor {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   /* padding-left: 10%; */
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   color: #733e90;
   font-weight: 700;
@@ -681,14 +570,9 @@ img {
   color: red;
   font-weight: bold;
   font-size: 18px;
-  -webkit-transition: 0.6s ease;
-  -o-transition: 0.6s ease;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 /* Position the "next button" to the right */
@@ -733,8 +617,6 @@ img {
   background-color: #83a8e8;
   border-radius: 50%;
   display: inline-block;
-  -webkit-transition: background-color 0.6s ease;
-  -o-transition: background-color 0.6s ease;
   transition: background-color 0.6s ease;
   z-index: 10;
 }
@@ -754,19 +636,8 @@ img {
 
 /* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-          animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @keyframes fade {
@@ -780,13 +651,9 @@ img {
 
 .group {
   /* text-align: ; */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   line-height: 28px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   position: relative;
   /* max-width: 350px; */
   /* margin-left: auto; */
@@ -813,25 +680,7 @@ img {
   /* background-color: #D9E8D8; */
   /* color: #0d0c22; */
   /* box-shadow: 0 0 5px #C1D9BF, 0 0 0 10px #f5f5f5eb; */
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
   transition: 0.3s ease;
-}
-
-.input::-webkit-input-placeholder {
-  color: #777;
-}
-
-.input::-moz-placeholder {
-  color: #777;
-}
-
-.input:-ms-input-placeholder {
-  color: #777;
-}
-
-.input::-ms-input-placeholder {
-  color: #777;
 }
 
 .input::placeholder {
@@ -865,14 +714,10 @@ img {
 
 .btNavMobFl {
   margin-left: 5%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 30px 1fr;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 .webHdr{
   display: block;
@@ -883,13 +728,10 @@ img {
 
 .navHdr {
   padding: 0% 2%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 40px 1fr 40px 1fr 40px 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 40px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .imgWeb{
@@ -928,47 +770,33 @@ img {
     overflow-x: auto;
   }
   .cardGrid {
-    -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
   }
   .modal-content {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
   }
   .flexer {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
 }
 @media only screen and (max-width: 900px) {
   .flexer {
     /* display: grid; */
-    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
 }
 
 @media only screen and (max-width: 900px) {
   .cardGrid {
-    -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }
   .flexer {
     /* display: grid; */
-    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   .flexanchor {
     /* justify-content: center; */
@@ -987,18 +815,15 @@ img {
 
   .navhdr{
     padding: 2% 2%;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 40px 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
 
   .imx {
     padding-left: 0%;
-  }
+   }
 
   .imgWeb{
     display: none;
@@ -1016,7 +841,6 @@ img {
   }
 
   .modalBG {
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 
@@ -1036,29 +860,21 @@ img {
   }
   .flexanchor {
     /* justify-content: center; */
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     margin-left: 5%;
     text-align: center;
   }
   .searchCourse {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     /* margin-left: 15%; */
   }
   .flexer {
     /* display: grid; */
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     margin-left: 5%;
   }
 
@@ -1069,7 +885,6 @@ img {
     margin-bottom: 10px;
   }
   .cardGrid {
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 
