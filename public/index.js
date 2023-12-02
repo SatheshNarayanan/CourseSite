@@ -1,5 +1,59 @@
+//THIS WILL TAKE THE URL IN WHICH APP IS HOSTED AND CALL BACKEND API
 const backenduri = window.location.origin;
 console.log(window.location);
+
+//CARDS METADATA BASED ON WHICH THE CARDS LIST, COURSE DROPDOWN WILL BE LOADED
+let cardData = [
+  {
+    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
+    title: "Digital",
+    sector: "Digital",
+    duration: "60 Minutes",
+    cost: 999,
+    rating: 4,
+  },
+  {
+    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
+    title: "IOT(Internet Of Things)",
+    sector: "IOT",
+    duration: "60 Minutes",
+    cost: 999,
+    rating: 5,
+  },
+  {
+    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
+    title: "Web Developer",
+    sector: "Digital",
+    duration: "60 Minutes",
+    cost: 999,
+    rating: 3,
+  },
+  {
+    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
+    title: "Java - Full Stack Java Developer",
+    sector: "Digital",
+    duration: "60 Minutes",
+    cost: 999,
+    rating: 2,
+  },
+  {
+    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
+    title: "Artificial Intelligence",
+    sector: "Artificial Intelligence",
+    duration: "60 Minutes",
+    cost: 999,
+    rating: 1,
+  },
+  {
+    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
+    title: "Cloud Analyst, Cloud Engineer",
+    sector: "Cloud Computing",
+    duration: "60 Minutes",
+    cost: 999,
+    rating: 0,
+  },
+];
+
 
 let cardList = document.getElementById("cardGrid");
 
@@ -103,56 +157,6 @@ window.onclick = function (event) {
   }
 };
 
-let cardData = [
-  {
-    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
-    title: "Digital",
-    sector: "Digital",
-    duration: "60 Minutes",
-    cost: 999,
-    rating: 4,
-  },
-  {
-    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
-    title: "IOT(Internet Of Things)",
-    sector: "IOT",
-    duration: "60 Minutes",
-    cost: 999,
-    rating: 5,
-  },
-  {
-    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
-    title: "Web Developer",
-    sector: "Digital",
-    duration: "60 Minutes",
-    cost: 999,
-    rating: 3,
-  },
-  {
-    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
-    title: "Java - Full Stack Java Developer",
-    sector: "Digital",
-    duration: "60 Minutes",
-    cost: 999,
-    rating: 2,
-  },
-  {
-    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
-    title: "Artificial Intelligence",
-    sector: "Artificial Intelligence",
-    duration: "60 Minutes",
-    cost: 999,
-    rating: 1,
-  },
-  {
-    img: "https://media.istockphoto.com/id/1366428092/photo/webinar-e-learning-skills-business-internet-technology-concepts-training-webinar-e-learning.webp?b=1&s=170667a&w=0&k=20&c=qjK4h0qt4W_NNG8TmboGw8RDRv8TNzEoFM_JEDZ1Ah0=",
-    title: "Cloud Analyst, Cloud Engineer",
-    sector: "Cloud Computing",
-    duration: "60 Minutes",
-    cost: 999,
-    rating: 0,
-  },
-];
 
 function handleRegisterSubmit() {
   console.log("handleRegistration called");
@@ -177,7 +181,7 @@ function handleRegisterSubmit() {
     const data = {
       nielitid: nielitid,
       email: emailid,
-      password: phoneno,
+      phoneno: phoneno,
       course: activeCourse,
       name: name,
     };
@@ -612,3 +616,25 @@ function modClick(element) {
     wdug.style.display = "block";
   }
 }
+
+
+fetch(`${backenduri}/enrollCount`, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  },})
+  .then((response) => {
+    if (!response.ok) {
+      return response.json().then((errorResponse) => {
+        throw new Error(
+          errorResponse.msg || "Network response was not ok."
+        );
+      });
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log("Success:", data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);  })
